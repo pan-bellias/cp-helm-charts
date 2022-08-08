@@ -1,0 +1,23 @@
+image: "ghcr.io/pan-bellias/cp-kafka-connect"
+imageTag: "latest"
+imagePullSecrets:
+  - name: regcred
+configurationOverrides:
+  "plugin.path": "/usr/share/java,/usr/share/confluent-hub-components"
+  "bootstrap.servers": "kafka-0.kafka-headless.default.svc.cluster.local:9092"
+  "key.converter": "org.apache.kafka.connect.json.JsonConverter"
+  "value.converter": "org.apache.kafka.connect.json.JsonConverter"
+  "key.converter.schemas.enable": "false"
+  "value.converter.schemas.enable": "false"
+  "internal.key.converter": "org.apache.kafka.connect.json.JsonConverter"
+  "internal.value.converter": "org.apache.kafka.connect.json.JsonConverter"
+  "config.storage.replication.factor": "1"
+  "offset.storage.replication.factor": "1"
+  "status.storage.replication.factor": "1"
+prometheus:
+  jmx:
+    enabled: false
+
+
+kafka:
+  bootstrapServers: "kafka-0.kafka-headless.default.svc.cluster.local:9092"
