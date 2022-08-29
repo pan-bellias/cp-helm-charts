@@ -4,7 +4,7 @@ imagePullSecrets:
   - name: regcred
 configurationOverrides:
   "plugin.path": "/usr/share/java,/usr/share/confluent-hub-components"
-  "bootstrap.servers": "10.43.59.224:9092"
+  "bootstrap.servers": "kafka-0.kafka-headless.default.svc.cluster.local:9092"
   "key.converter": "org.apache.kafka.connect.json.JsonConverter"
   "value.converter": "org.apache.kafka.connect.json.JsonConverter"
   "key.converter.schemas.enable": "false"
@@ -20,4 +20,4 @@ prometheus:
 
 
 kafka:
-  bootstrapServers: "10.43.59.224:9092"
+  bootstrapServers: "kafka-0.kafka-headless.default.svc.cluster.local:9092"
